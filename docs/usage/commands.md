@@ -1,0 +1,1 @@
+meroshare-cli timezone <timezone> [--date <format>]
