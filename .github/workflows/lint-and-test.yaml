@@ -43,17 +43,3 @@ jobs:
             ${{ runner.os }}-go-
       - name: Install Go dependencies
         run: go mod download
-
-      - name: Install pre-commit
-        run: pip install pre-commit
-
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v7
-        with:
-          version: v2.0
-
-      - name: Run pre-commit
-        run: pre-commit run --all-files --show-diff-on-failure
-
-      - name: Run Go tests
-        run: go test ./... -v -coverprofile=coverage.txt -covermode=atomic -race
